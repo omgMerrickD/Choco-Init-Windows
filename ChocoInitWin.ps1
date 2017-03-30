@@ -1,15 +1,21 @@
 # ChocoInitWin.ps1
 # A simple Powershell script to make setting up my Windows 10 environment quicker.
 
-# Need to ensure the ExecutionPolicy is properly set
-Set-ExecutionPolicy AllSigned
+# ExecutionPolicy must not be Restricted.  Check via Get-ExecutionPolicy and set via Set-ExecutionPolicy Bypass
 
-# Chocolatey needs to be installed
+# Install Chocolatey
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-# should probably have some checks in here to see if everything went ok before proceeding... hmm.
+# Check to see if there were any errors with the install
+if ($? == False) {
+    throw
+}
 
 # Install packages with Chocolatey
+Write-Host "Installing packages..."
+
+# Considering supressing output here and possibly adding a progress bar
+
 cinst putty -y
 cinst peazip -y
 cinst git -y
