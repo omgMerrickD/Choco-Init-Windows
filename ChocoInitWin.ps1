@@ -4,7 +4,7 @@
 # Check via 'Get-ExecutionPolicy' and set via 'Set-ExecutionPolicy Bypass'
 
 # Install Chocolatey
-iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 # Check to see if there were any errors with the install
 if ($? == False) {
