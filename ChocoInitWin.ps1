@@ -31,6 +31,8 @@ cinst spacesniffer -y
 cinst haroopad -y
 cinst thunderbird -y
 cinst libreoffice -y
+cinst evernote -y
+cinst vlc -y
 cinst vcredist2010 -y
 cinst vcredist2012 -y
 cinst vcredist2013 -y
