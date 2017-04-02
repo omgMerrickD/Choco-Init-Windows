@@ -33,6 +33,10 @@ cinst thunderbird -y
 cinst libreoffice -y
 cinst evernote -y
 cinst vlc -y
+cinst kitty -y
+cinst speccy -y
+cinst hashtab -y
+cinst ditto -y
 cinst vcredist2010 -y
 cinst vcredist2012 -y
 cinst vcredist2013 -y
