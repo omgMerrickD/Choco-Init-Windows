@@ -18,6 +18,11 @@ Write-Host "Installing packages..."
 
 # Consider supressing output here and possibly adding a progress bar
 
+cinst powershell-core -y
+cinst bitwarden -y
+cinst powertoys -y
+cinst vscode -y
+cinst firefox -y
 cinst GeekUninstaller -y
 cinst putty -y
 cinst peazip -y
