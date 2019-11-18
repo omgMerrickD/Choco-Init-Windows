@@ -19,6 +19,7 @@ Write-Host "Installing packages..."
 # Consider supressing output here and possibly adding a progress bar
 
 cinst powershell-core -y
+cinst wmiexplorer -y
 cinst bitwarden -y
 cinst powertoys -y
 cinst vscode -y
