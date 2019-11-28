@@ -13,28 +13,19 @@ if ($? == False) {
     throw
 }
 
-# Install packages with Chocolatey
-Write-Host "Installing packages..."
+# Create an array of software to install
+$instList = @("wmiexplorer", "bitwarden", "powertoys", "vscode", "geekuninstaller", "git", "github-desktop", "cmder", "sysinternals", "spacesniffer", "firefox", "googlechrome", "hashtab", "ditto", "vcredist2010", "vcredist2012", "vcdredist2013", "vcredist2015")
 
-# Consider supressing output here and possibly adding a progress bar
+$Progress = @{
+    Activity = 'Installing packages via Chocolatey:'
+    CurrentOperation = "Installing $instList[$i]:"
+    PercentComplete = 0
+}
 
-cinst powershell-core -y
-cinst wmiexplorer -y
-cinst bitwarden -y
-cinst powertoys -y
-cinst vscode -y
-cinst firefox -y
-cinst GeekUninstaller -y
-cinst putty -y
-cinst peazip -y
-cinst git -y
-cinst github-desktop -y
-cinst cmder -y
-cinst sysinternals -y
-cinst spacesniffer -y
-cinst hashtab -y
-cinst ditto -y
-cinst vcredist2010 -y
-cinst vcredist2012 -y
-cinst vcredist2013 -y
-cinst vcredist2015 -y
+
+# Iterate through the array and install with 'choco install <name_in_array> -y'
+foreach ($item in $instList) {
+    $i++
+    [int]$percentage = ($i / $instList.Count)*100 
+    cinst $instList[$i] -noop | Out-Null # -noop is here for testing
+}
