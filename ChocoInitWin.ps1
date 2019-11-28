@@ -5,7 +5,7 @@ $execPol = Get-ExecutionPolicy
 
 # ExecutionPolicy must not be Restricted so let's check it and set it correctly if needed
 if ($execPol -ne "Bypass") {
-    Set-ExecutionPolicy Bypass -Scope Process -Force; iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+    Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-WebRequest https://chocolatey.org/install.ps1 -UseBasicParsing | Invoke-Expression
 }
 
 # Check to see if there were any errors with the install
